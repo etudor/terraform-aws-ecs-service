@@ -107,6 +107,7 @@ variable "health_checks" {
     healthy_threshold   = number
     interval            = number
     matcher             = string
+    protocol            = string
     path                = string
     timeout             = number
     unhealthy_threshold = number
@@ -118,6 +119,7 @@ variable "health_checks" {
       interval            = 10
       matcher             = 200
       path                = "/"
+      protocol            = "HTTPS"
       timeout             = 10
       unhealthy_threshold = 5
     }

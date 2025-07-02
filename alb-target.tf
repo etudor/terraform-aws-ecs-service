@@ -11,6 +11,7 @@ resource "aws_lb_target_group" "app" {
     for_each = var.health_checks
     content {
       enabled             = health_check.value["enabled"]
+      protocol            = health_check.value["protocol"]
       healthy_threshold   = health_check.value["healthy_threshold"]
       interval            = health_check.value["interval"]
       matcher             = health_check.value["matcher"]
@@ -35,6 +36,7 @@ resource "aws_lb_target_group" "app_test" {
     for_each = var.health_checks
     content {
       enabled             = health_check.value["enabled"]
+      protocol            = health_check.value["protocol"]
       healthy_threshold   = health_check.value["healthy_threshold"]
       interval            = health_check.value["interval"]
       matcher             = health_check.value["matcher"]
